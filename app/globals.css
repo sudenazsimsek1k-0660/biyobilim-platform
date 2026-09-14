@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==================================================
+   BİYOBİLİM — Global Tasarım Token'ları
+   Bileşenler öncelikli olarak Tailwind utility sınıflarını kullanır;
+   bu değişkenler yalnızca Tailwind ile ifade edilemeyen özel efektler
+   (imza motifi, gradyanlar) için kullanılır.
+================================================== */
+:root {
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-source-serif: "Source Serif 4", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-head font-semibold text-blue-deep tracking-tight;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-green;
+  }
+}
+
+@layer components {
+  /* İmza motifi: bilimsel not defteri / herbaryum etiketi stili — statik prototipten korunmuştur */
+  .tag-eyebrow {
+    @apply inline-flex items-center gap-2 border-b border-line pb-1.5 font-tag text-[13px] italic text-green;
+  }
+  .tag-eyebrow::before {
+    content: "";
+    @apply h-px w-4 bg-green;
+  }
+  .ruler-divider {
+    @apply h-[22px] w-full opacity-70;
+    background-image: repeating-linear-gradient(to right, #DADEE1 0 1px, transparent 1px 24px);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: auto 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* NAVBAR LOGO - ARKA PLAN TAMAMEN ŞEFFAF */
+.navbar-logo {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: block !important;
+}
