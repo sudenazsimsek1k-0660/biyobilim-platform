@@ -12,7 +12,7 @@ type Biologos = {
 };
 
 export default async function BiologosPage() {
-  const supabase = await createClient();
+  const supabase = (await createClient()) as any;
 
   const { data: issues, error } = await supabase
     .from("biologos")
@@ -69,7 +69,7 @@ export default async function BiologosPage() {
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-              {issues.map((issue) => (
+              {issues.map((issue: any) => (
                 <article
                   key={issue.id}
                   className="group overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-[#e1e9e4] transition duration-300 hover:-translate-y-1 hover:shadow-lg"

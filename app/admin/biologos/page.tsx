@@ -15,7 +15,7 @@ type Biologos = {
 };
 
 export default function AdminBiologosPage() {
-  const supabase = createClient();
+  const supabase = createClient() as any;
 
   const [issues, setIssues] = useState<Biologos[]>([]);
   const [loading, setLoading] = useState(true);

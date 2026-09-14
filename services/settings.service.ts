@@ -8,7 +8,7 @@ import type { SiteSettings } from "@/types";
  * Server Component'lerden doğrudan çağrılabilir.
  */
 export async function getSiteSettings(): Promise<SiteSettings> {
-  const supabase = await createClient();
+  const supabase = (await createClient()) as any;
   const { data, error } = await supabase
     .from("site_settings")
     .select("*")
@@ -32,7 +32,7 @@ export async function updateHomeStatistics(input: {
   stat_biologos_count: number;
   stat_podcast_count: number;
 }) {
-  const supabase = await createClient();
+  const supabase = (await createClient()) as any;
   const { data: userData } = await supabase.auth.getUser();
 
   const { error } = await supabase

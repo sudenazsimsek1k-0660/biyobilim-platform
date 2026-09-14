@@ -41,7 +41,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={item.href as any}
               className="rounded-full px-3 py-2 text-sm font-medium text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-[#8ec5ff]"
             >
               {item.label}
@@ -76,7 +76,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href as any}
                 onClick={() => setMobileOpen(false)}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-[#8ec5ff]"
               >

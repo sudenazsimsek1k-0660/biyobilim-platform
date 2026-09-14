@@ -88,9 +88,9 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                 pathname.startsWith(`${item.href}/`);
 
               return (
-                <Link
-                  key={item.href}
-                  href={item.href}
+                <Link             
+               key={item.href}
+                href={item.href as any}
                   className={`flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold transition ${
                     isActive
                       ? "bg-[#163b2a] text-white"

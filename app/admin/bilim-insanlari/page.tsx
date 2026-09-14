@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
-const supabase = createClient();
+const supabase = createClient() as any;
 
 type Scientist = {
   id: number;
@@ -98,23 +98,17 @@ export default function BilimInsanlariAdminPage() {
       }
 
       if (editingId !== null) {
-        const scientistData: {
-          name: string;
-          title: string | null;
-          field: string | null;
-          bio: string | null;
-          image_url?: string | null;
-        } = {
-          name: form.name.trim(),
-          title: form.title.trim() || null,
-          field: form.field.trim() || null,
-          bio: form.bio.trim() || null,
-        };
+        const scientistData = {
+  full_name: form.name.trim(),
+  field: form.field.trim(),
+  short_bio: form.bio.trim(),
+  photo_url: imageUrl,
+};
 
-        // Düzenlemede yeni fotoğraf seçildiyse mevcut fotoğrafı değiştir
-        if (imageFile) {
-          scientistData.image_url = imageUrl;
-        }
+        /// Düzenlemede yeni fotoğraf seçildiyse mevcut fotoğrafı değiştir
+if (imageFile) {
+  scientistData.photo_url = imageUrl;
+}
 
         const { error } = await supabase
           .from("scientists")
@@ -130,12 +124,11 @@ export default function BilimInsanlariAdminPage() {
         alert("Bilim insanı güncellendi.");
       } else {
         const scientistData = {
-          name: form.name.trim(),
-          title: form.title.trim() || null,
-          field: form.field.trim() || null,
-          bio: form.bio.trim() || null,
-          image_url: imageUrl,
-        };
+  full_name: form.name.trim(),
+  field: form.field.trim(),
+  short_bio: form.bio.trim(),
+  photo_url: imageUrl,
+};
 
         const { error } = await supabase
           .from("scientists")

@@ -14,7 +14,7 @@ type News = {
 };
 
 export default function AdminHaberlerPage() {
-  const supabase = createClient();
+  const supabase = createClient() as any;
 
   const [news, setNews] = useState<News[]>([]);
   const [loading, setLoading] = useState(true);

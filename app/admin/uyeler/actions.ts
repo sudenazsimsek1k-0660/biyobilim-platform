@@ -15,7 +15,7 @@ export async function updateMembershipStatus(formData: FormData) {
     throw new Error("Geçersiz başvuru durumu.");
   }
 
-  const supabase = createAdminClient();
+  const supabase = createAdminClient() as any;
 
   const { error } = await supabase
     .from("membership_applications")

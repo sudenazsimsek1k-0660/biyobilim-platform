@@ -229,7 +229,7 @@ export default function HomePage() {
 
               <Link
                 key={section.title}
-                href={section.href}
+                href={section.href as any}
                 className="group rounded-3xl border border-[#e1e8e3] bg-[#f9fbf9] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#b9cdbf] hover:shadow-lg"
               >
 

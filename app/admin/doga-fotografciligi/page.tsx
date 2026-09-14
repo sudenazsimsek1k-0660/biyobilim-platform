@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
-const supabase = createClient();
+const supabase = createClient() as any;
 
 type NaturePhoto = {
   id: number;

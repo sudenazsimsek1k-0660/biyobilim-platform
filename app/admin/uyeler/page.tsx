@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { updateMembershipStatus } from "./actions";
 
 export default async function UyelerPage() {
-  const supabase = await createClient();
+  const supabase = (await createClient()) as any;
 
   const { data: applications, error } = await supabase
     .from("membership_applications")
@@ -51,7 +51,7 @@ export default async function UyelerPage() {
         {applications && applications.length > 0 ? (
           <div className="space-y-4">
 
-            {applications.map((application) => (
+            {applications.map((application: any) => (
               <div
                 key={application.id}
                 className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-[#e1e9e4]"

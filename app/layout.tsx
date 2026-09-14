@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
   description: siteConfig.description,
 
-  keywords: siteConfig.keywords,
+  keywords: [...siteConfig.keywords],
 
   icons: {
     icon: "/logo.png",

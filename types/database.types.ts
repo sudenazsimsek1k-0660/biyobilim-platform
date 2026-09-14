@@ -257,6 +257,47 @@ export interface Database {
       messages: { Row: MessageRow; Insert: Partial<MessageRow>; Update: Partial<MessageRow> };
       notifications: { Row: NotificationRow; Insert: Partial<NotificationRow>; Update: Partial<NotificationRow> };
       site_settings: { Row: SiteSettingsRow; Insert: Partial<SiteSettingsRow>; Update: Partial<SiteSettingsRow> };
+      membership_applications: {
+        Row: {
+          id: string;
+          first_name: string;
+          last_name: string;
+          email: string;
+          phone: string | null;
+          university: string | null;
+          department: string | null;
+          class_year: string | null;
+          status: RegistrationStatus;
+          created_at: string;
+          reviewed_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          first_name: string;
+          last_name: string;
+          email: string;
+          phone?: string | null;
+          university?: string | null;
+          department?: string | null;
+          class_year?: string | null;
+          status?: RegistrationStatus;
+          created_at?: string;
+          reviewed_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          first_name?: string;
+          last_name?: string;
+          email?: string;
+          phone?: string | null;
+          university?: string | null;
+          department?: string | null;
+          class_year?: string | null;
+          status?: RegistrationStatus;
+          created_at?: string;
+          reviewed_at?: string | null;
+        };
+      };
     };
   };
 }
