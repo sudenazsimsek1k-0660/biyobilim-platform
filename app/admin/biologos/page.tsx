@@ -9,8 +9,8 @@ type Biologos = {
   title: string;
   description: string;
   issue_number: number;
-  cover_image_url: coverImageUrl,
-  pdf_url: pdfUrl,
+  cover_image_url: string | null;
+  pdf_url: string | null;
   published_at: string | null;
 };
 
