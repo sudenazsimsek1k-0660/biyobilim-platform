@@ -128,16 +128,16 @@ export default async function BiologosPage() {
                     )}
 
                     {issue.pdf_url && (
-                      <a
-                        href={issue.pdf_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-6 inline-flex items-center font-semibold text-[#2f6f4e] transition hover:text-[#2f80ed]"
-                      >
-                        Dergiyi Görüntüle
-                        <span className="ml-2">→</span>
-                      </a>
-                    )}
+  <Link
+    href={`/biologos/${issue.id}`}
+    className="mt-6 inline-flex items-center font-semibold text-[#2f6f4e] transition hover:text-[#2f80ed]"
+  >
+    Dergiyi Görüntüle
+    <span className="ml-2 transition-transform group-hover:translate-x-1">
+      →
+    </span>
+  </Link>
+)}
 
                   </div>
 
