@@ -80,9 +80,10 @@ export default async function HaberDetayPage({
             {news.description}
           </p>
 
-          <div className="whitespace-pre-line text-base leading-8 text-[#3f4742]">
-            {news.content}
-          </div>
+          <div
+  className="prose prose-lg max-w-none text-[#3f4742] prose-headings:text-[#163b2a] prose-strong:text-[#163b2a]"
+  dangerouslySetInnerHTML={{ __html: news.content }}
+/>
 
           <div className="mt-12 border-t border-[#dce5df] pt-8">
             <Link

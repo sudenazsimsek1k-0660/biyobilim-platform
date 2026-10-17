@@ -1,5 +1,6 @@
 "use client";
 
+import RichTextEditor from "@/components/RichTextEditor";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
@@ -234,20 +235,20 @@ export default function AdminHaberlerPage() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-semibold text-[#315441]">
-                İçerik
-              </label>
+  <label className="mb-2 block text-sm font-semibold text-[#315441]">
+    İçerik
+  </label>
 
-              <textarea
-                value={form.content}
-                onChange={(e) =>
-                  setForm({ ...form, content: e.target.value })
-                }
-                rows={8}
-                className="w-full rounded-xl border border-[#d4e0d8] px-4 py-3 outline-none focus:border-[#287fea]"
-                placeholder="Haberin tam içeriği"
-              />
-            </div>
+  <textarea
+    value={form.content}
+    onChange={(e) =>
+      setForm({ ...form, content: e.target.value })
+    }
+    rows={8}
+    className="w-full rounded-xl border border-[#d4e0d8] px-4 py-3 outline-none focus:border-[#287fea]"
+    placeholder="Haberin tam içeriği"
+  />
+</div>
 
             <div>
               <label className="mb-2 block text-sm font-semibold text-[#315441]">
